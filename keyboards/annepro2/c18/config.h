@@ -59,3 +59,9 @@
 // Wear-leveling driver configuration
 #define WEAR_LEVELING_LOGICAL_SIZE 1024
 #define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
+
+// Time between tap and hold (ms)
+#define TAPPING_TERM 150
+
+// Mouse mode (quadratic)
+#define MK_KINETIC_SPEED

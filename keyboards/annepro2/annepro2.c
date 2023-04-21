@@ -219,13 +219,13 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             case KC_AP_RGB_VAI:
                 if (record->event.pressed) {
                     if (get_mods() & MOD_MASK_SHIFT) {
-                        rgb_matrix_increase_hue();
+                        rgb_matrix_increase_hue_noeeprom();
                         return false;
                     } else if (get_mods() & MOD_MASK_CTRL) {
-                        rgb_matrix_decrease_hue();
+                        rgb_matrix_decrease_hue_noeeprom();
                         return false;
                     } else {
-                        rgb_matrix_increase_val();
+                        rgb_matrix_increase_val_noeeprom();
                     }
                 }
                 return true;
@@ -233,13 +233,13 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             case KC_AP_RGB_VAD:
                 if (record->event.pressed) {
                     if (get_mods() & MOD_MASK_SHIFT) {
-                        rgb_matrix_increase_sat();
+                        rgb_matrix_increase_sat_noeeprom();
                         return false;
                     } else if (get_mods() & MOD_MASK_CTRL) {
-                        rgb_matrix_decrease_sat();
+                        rgb_matrix_decrease_sat_noeeprom();
                         return false;
                     } else {
-                        rgb_matrix_decrease_val();
+                        rgb_matrix_decrease_val_noeeprom();
                     }
                 }
                 return true;
@@ -247,19 +247,19 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             case KC_AP_RGB_TOG:
                 if (record->event.pressed) {
                     if (get_mods() & MOD_MASK_SHIFT) {
-                        rgb_matrix_increase_speed();
+                        rgb_matrix_increase_speed_noeeprom();
                         return false;
                     } else if (get_mods() & MOD_MASK_CTRL) {
-                        rgb_matrix_decrease_speed();
+                        rgb_matrix_decrease_speed_noeeprom();
                         return false;
                     } else {
                         if (led_enabled) {
                             ap2_led_disable();
-                            rgb_matrix_disable();
+                            rgb_matrix_disable_noeeprom();
                             led_enabled = 0;
                         } else {
                             ap2_led_enable();
-                            rgb_matrix_enable();
+                            rgb_matrix_enable_noeeprom();
                             led_enabled = 1;
                         }
                         return true;
@@ -270,10 +270,10 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             case KC_AP_RGB_MOD:
                 if (record->event.pressed) {
                     if (get_mods() & MOD_MASK_CTRL) {
-                        rgb_matrix_step_reverse();
+                        rgb_matrix_step_reverse_noeeprom();
                         return false;
                     } else {
-                        rgb_matrix_step();
+                        rgb_matrix_step_noeeprom();
                     }
                 }
                 return true;
