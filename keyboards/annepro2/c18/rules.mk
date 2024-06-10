@@ -46,9 +46,7 @@ COMBO_ENABLE = no
 
 # Anne Pro 2
 SRC = \
-	matrix.c \
 	annepro2_ble.c \
 	ap2_led.c \
 	protocol.c \
 	rgb_driver.c \
-	config_led.c
